@@ -19,8 +19,11 @@ import javax.persistence.Id;
 public class Pessoa implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column
+    private String sobrenome;
     
     @Column
     private String nome;
@@ -40,6 +43,15 @@ public class Pessoa implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+    
     
     
     public Pessoa() {
