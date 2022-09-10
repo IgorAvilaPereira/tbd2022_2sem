@@ -115,19 +115,16 @@ PONG
 
 Ao contrário de outros datastores de chave-valor que oferecem estruturas de dados limitadas, o Redis tem uma grande variedade de estruturas de dados para atender às necessidades de suas aplicações. Os tipos de dados do Redis incluem:
 
-* Strings – dados em texto ou binários com tamanho de até 512 MB
-* Listas – uma coleção de strings na ordem em que foram adicionadas
-* Conjuntos: uma coleção não ordenada de strings com a capacidade de fazer a intersecção, união e diferenciação de outros tipos de conjunto
-* Conjuntos ordenados: conjuntos ordenados por um valor
-* Hashes: uma estrutura de dados para armazenar uma lista de campos e valores
-* Bitmaps: um tipo de dados que oferece operações de nível de bits
-* HyperLogLogs: uma estrutura de dados probabilística para estimar os itens únicos em um conjunto de dados
-* Transmissões: uma fila de mensagens de estrutura de dados de log
-* Dados geoespaciais: um mapa de registros com base em longitude/latitude
-* JSON - um objeto aninhado e semiestruturado de valores nomeados que suportam números, strings, booleanos, matrizes e outros objetos
-
-
-
+* **Strings** – dados em texto ou binários com tamanho de até 512 MB
+* **Listas** – uma coleção de strings na ordem em que foram adicionadas
+* **Conjuntos** – uma coleção não ordenada de strings com a capacidade de fazer a intersecção, união e diferenciação de outros tipos de conjunto
+* **Conjuntos ordenados** – conjuntos ordenados por um valor
+* **Hashes** – uma estrutura de dados para armazenar uma lista de campos e valores
+* **Bitmaps** – um tipo de dados que oferece operações de nível de bits
+* **HyperLogLogs** – uma estrutura de dados probabilística para estimar os itens únicos em um conjunto de dados
+* **Transmissões** – uma fila de mensagens de estrutura de dados de log
+* **Dados geoespaciais** – um mapa de registros com base em longitude/latitude
+* **JSON** - um objeto aninhado e semiestruturado de valores nomeados que suportam números, strings, booleanos, matrizes e outros objetos
 
 ### Strings
 
@@ -221,6 +218,62 @@ OK
 ```
 
 O exemplo acima cria uma chave (***key***) com uma ***string*** com valor 100 que irá expirar em 10 segundos. O commando ***ttl*** é chamado com objetivo de checar o tempo restante de vida desta chave.
+
+**+ Alguns Comandos:**
+
+**DEL \<key\>**
+Este comando delete uma chave, se existe.
+
+<!--
+**DUMP key**
+This command returns a serialized version of the value stored at the specified key.
+-->
+
+**EXISTS \<key\>**
+Este comando checa se a chave (key) existe ou não.
+
+**EXPIRE \<key\> \<seconds\>**
+Define o tempo que uma determinada chave era expirar.
+
+**EXPIREAT \<key\> \<timestamp\>**
+Define o tempo que uma determinada chave era expirar (formato Unix Timestamp).
+
+**PEXPIRE \<key\> \<milliseconds\>**
+Define o tempo que uma determinada chave era expirar (milisegundos).
+
+<!--
+7	PEXPIREAT key milliseconds-timestamp
+Sets the expiry of the key in Unix timestamp specified as milliseconds.
+-->
+
+**KEYS \<pattern\>**
+Encontra todas as chaves que respeitam um padrão (***pattern***) pelo usuário.
+
+**MOVE \<key\> \<db\>**
+
+Move uma chave (key) para outro banco de dados (db).
+
+**PERSIST \<key\>**
+Remove o período de experiração de uma chave (key).
+
+**PTTL \<key\>**
+Retorna o tempo restante para expirar uma chave (key) em milisegundos.
+
+**TTL \<key\>**
+Retorna o tempo restante para expirar uma chave (key).
+
+**RANDOMKEY**
+Retorna um chave aleatória.
+
+**RENAME \<key\> \<newkey\>**
+Muda o nome de uma chave (key) para um novo nome (newkey).
+
+**RENAMENX \<key\> \<newkey\>**
+Renomeia a chave (key), se a nova chave (newkey) não existe.
+
+**TYPE \<key\>**
+Retorna o tipo do dado armazenado em uma chave (key).
+
 
 ### Listas
 
