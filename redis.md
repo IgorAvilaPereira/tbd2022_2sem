@@ -52,17 +52,17 @@ Os comandos REDIS são usados, juntamente, em um servidor REDIS.
 
 Para rodar comandos em um servidor REDIS, você precisa de um ***client***. O redis-cli é um cliente incorporado no próprio pacote de instalação do servidor REDIS.
 
-Para iniciar o redis-cli, abra o terminal e digite redis-cli. Este comando irá conectá-lo ao servidor local e partir deste momento você poderá rodar qualquer comando.
+Para iniciar o ***redis-cli***, abra o terminal e digite ***redis-cli***. Este comando irá conectá-lo ao servidor local e partir deste momento você poderá rodar qualquer comando.
 
 ```bash
-$redis-cli 
+$ redis-cli 
 redis 127.0.0.1:6379> 
 redis 127.0.0.1:6379> PING  
 PONG
 ``` 
 No exemplo acima, nós conectamos a um servidor REDIS rodando na máquina local e executamos o comando PING que checa se o servidor está rodando corretamente ou não.
 
-## Conexão e Segurança
+### Conexão e Segurança
 
 Redis pode ser seguro, uma vez que qualquer cliente necessita se autenticar antes de executar algum comando. Para tornar o REDIS seguro, você precisa atribuir uma senha ao arquivo de configuração.
 
@@ -93,7 +93,7 @@ OK
 "Test value"
 ```
 
-## Conexão em um Servidor REDIS Remoto
+### Conexão em um Servidor REDIS Remoto
 
 Para executuar comandos em um servidor REDIS remoto, você precisa se conectar a este servidor através do mesmo cliente ***redis-cli***.
 
@@ -491,6 +491,24 @@ redis 127.0.0.1:6379> ZRANGEBYSCORE tutoriallist 0 1000
 ```
 
 
+## Transações
+
+As transações permitem executar um grupo de comandos em um único passo.
+
+Todos os comandos de uma transação são, sequencialmente, executados como um única operação isolada. 
+
+Transações no Redis são também operações atômicas, ou seja, signica que todos - ou nenhum - dos comandos de um transação são processados.
+
+Transações no REDIS são iniciadas pelo comando MULTI e então necessitam de uma lista de comandos que devem ser executados pela transação. Devemos usar o comando EXEC para encerrar o bloco de uma transação iniciada pelo comando MULTI.
+
+```BASH
+redis 127.0.0.1:6379> MULTI 
+OK 
+List of commands here 
+redis 127.0.0.1:6379> EXEC
+```
+
+
 ## Restauração e Backup
 
 
@@ -539,24 +557,6 @@ O comando BGSAVE é um comando alternativo para a criação de backups no REDIS.
 ```bash
 127.0.0.1:6379> BGSAVE  
 Background saving started
-```
-
-
-### Transações
-
-As transações permitem executar um grupo de comandos em um único passo.
-
-Todos os comandos de uma transação são, sequencialmente, executados como um única operação isolada. 
-
-Transações no Redis são também operações atômicas, ou seja, signica que todos - ou nenhum - dos comandos de um transação são processados.
-
-Transações no REDIS são iniciadas pelo comando MULTI e então necessitam de uma lista de comandos que devem ser executados pela transação. Devemos usar o comando EXEC para encerrar o bloco de uma transação iniciada pelo comando MULTI.
-
-```BASH
-redis 127.0.0.1:6379> MULTI 
-OK 
-List of commands here 
-redis 127.0.0.1:6379> EXEC
 ```
 
 
