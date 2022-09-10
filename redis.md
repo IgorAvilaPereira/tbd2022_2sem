@@ -104,7 +104,7 @@ $ redis-cli -h host -p port -a password
 Este exemplo abaixo mostra como se conectar ao um servidor REDIS remoto, usando seu host, sua porta e uma senha.
 
 ```bash
-$redis-cli -h 127.0.0.1 -p 6379 -a "mypass" 
+$ redis-cli -h 127.0.0.1 -p 6379 -a "mypass" 
 redis 127.0.0.1:6379> 
 redis 127.0.0.1:6379> PING  
 PONG
@@ -134,7 +134,7 @@ Ao contrário de outros datastores de chave-valor que oferecem estruturas de dad
 **Criar uma chave e armazenar um valor:**
 
 ```bash
-iapereira@vostro3360:~$ redis-cli 
+$ redis-cli 
 > set mykey somevalue
 OK
 > get mykey
@@ -369,7 +369,7 @@ redis 127.0.0.1:6379> ZRANGEBYSCORE tutoriallist 0 1000
 O comando SAVE é usado para criar um backup do banco de dados corrente.
 
 ```bash
-iapereira@vostro3360:~$ redis-cli 
+$ redis-cli 
 127.0.0.1:6379> keys *
 1) "c"
 2) "a"
@@ -383,7 +383,7 @@ OK
 ```
 
 ```bash
-iapereira@vostro3360:~$ sudo su
+$ sudo su
 root@vostro3360:/home/iapereira# cd /var/lib/redis/
 root@vostro3360:/var/lib/redis# ls
 dump.rdb
