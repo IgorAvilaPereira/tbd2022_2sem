@@ -284,11 +284,47 @@ O comando ***sismeber*** testa se um valor pertence ao um determinado conjunto:
 (integer) 0
 ```
 
+Mais um exemplo:
+
+```bash
+redis 127.0.0.1:6379> sadd tutoriallist redis 
+(integer) 1 
+redis 127.0.0.1:6379> sadd tutoriallist mongodb 
+(integer) 1 
+redis 127.0.0.1:6379> sadd tutoriallist rabitmq 
+(integer) 1 
+redis 127.0.0.1:6379> sadd tutoriallist rabitmq 
+(integer) 0 
+redis 127.0.0.1:6379> smembers tutoriallist  
+
+1) "rabitmq" 
+2) "mongodb" 
+3) "redis" 
+```
+
 ### Sorted Sets
 
 Sorted Sets são um tipo de dado similar a um mix entre os tipos Set e Hash. São conjuntos ordenados compostos de únicos e não-repetidos ***strings*** de elementos já que em alguns casos é interessante ordenar um conjunto.
 
 Entretanto, enquanto elementos dentro do conjunto ***Set*** não são ordenados, cada elemento em um conjunto ordenado é associados a valor de ponto flutuante, chamado de escore (isto é porque o otipo é também similar a um hash, onde cada elemento é mapeado em um valor).
+
+
+```BASH
+
+redis 127.0.0.1:6379> zadd tutoriallist 0 redis 
+(integer) 1 
+redis 127.0.0.1:6379> zadd tutoriallist 0 mongodb 
+(integer) 1 
+redis 127.0.0.1:6379> zadd tutoriallist 0 rabitmq 
+(integer) 1 
+redis 127.0.0.1:6379> zadd tutoriallist 0 rabitmq 
+(integer) 0 
+redis 127.0.0.1:6379> ZRANGEBYSCORE tutoriallist 0 1000  
+
+1) "redis" 
+2) "mongodb" 
+3) "rabitmq"
+```
 
 
 ## Restauração e Backup
