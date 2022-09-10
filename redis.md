@@ -46,6 +46,22 @@ Aplicativos modernos e orientados a dados exigem machine learning para processar
 O Redis pode ser usado com soluções de streaming como Apache Kafka e Amazon Kinesis, atuando como datastore na memória para consumir, processar e analisar dados em tempo real com latência inferior a um milissegundo. O Redis é uma escolha ideal para casos de uso de análises em tempo real, como análises de mídia social, direcionamento de anúncios, personalização e IoT.
 
 
+## Conexão
+
+Os comandos REDIS são usados, juntamente, em um servidor REDIS.
+
+Para rodar comandos em um servidor REDIS, você precisa de um ***client***. O redis-cli é um cliente incorporado no próprio pacote de instalação do servidor REDIS.
+
+Para iniciar o redis-cli, abra o terminal e digite redis-cli. Este comando irá conectá-lo ao servidor local e partir deste momento você poderá rodar qualquer comando.
+
+```bash
+$redis-cli 
+redis 127.0.0.1:6379> 
+redis 127.0.0.1:6379> PING  
+PONG
+``` 
+No exemplo acima, nós conectamos a um servidor REDIS rodando na máquina local e executamos o comando PING que checa se o servidor está rodando corretamente ou não.
+
 ## Conexão e Segurança
 
 Redis pode ser seguro, uma vez que qualquer cliente necessita se autenticar antes de executar algum comando. Para tornar o REDIS seguro, você precisa atribuir uma senha ao arquivo de configuração.
@@ -76,6 +92,24 @@ OK
 127.0.0.1:6379> GET mykey 
 "Test value"
 ```
+
+## Conexão em um Servidor REDIS Remoto
+
+Para executuar comandos em um servidor REDIS remoto, você precisa se conectar a este servidor através do mesmo cliente ***redis-cli***.
+
+```bash
+$ redis-cli -h host -p port -a password
+```
+
+Este exemplo abaixo mostra como se conectar ao um servidor REDIS remoto, usando seu host, sua porta e uma senha.
+
+```bash
+$redis-cli -h 127.0.0.1 -p 6379 -a "mypass" 
+redis 127.0.0.1:6379> 
+redis 127.0.0.1:6379> PING  
+PONG
+```
+
 
 ## Tipos
 
