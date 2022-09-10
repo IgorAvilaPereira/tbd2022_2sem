@@ -45,6 +45,34 @@ Aplicativos modernos e orientados a dados exigem machine learning para processar
 ### Análise em tempo real
 O Redis pode ser usado com soluções de streaming como Apache Kafka e Amazon Kinesis, atuando como datastore na memória para consumir, processar e analisar dados em tempo real com latência inferior a um milissegundo. O Redis é uma escolha ideal para casos de uso de análises em tempo real, como análises de mídia social, direcionamento de anúncios, personalização e IoT.
 
+## Instalação Redis no Ubuntu
+
+```bash
+$ sudo apt-get update 
+$ sudo apt-get install redis-server
+```
+
+### Iniciar o Redis
+
+Checar se está tudo ok:
+
+```bash
+$ redis-server
+```
+
+Executar o ***client***:
+
+```bash
+$ redis-cli 
+redis 127.0.0.1:6379>
+```
+
+No prompt acima, 127.0.0.1 é o ip de sua máquina e 6379 é porta onde o servidor REDIS está rodando. Agora digite o PING command. Se receber PONG tudo está corretamente instalado e funcionando.
+
+```bash
+redis 127.0.0.1:6379> ping 
+PONG
+```
 
 ## Conexão
 
