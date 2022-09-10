@@ -15,7 +15,7 @@ Mas qual a diferença entre ele o cache? O que acontece quando o banco cai? Have
 
 Redis é uma evolução dos demais bancos de dados chave-valor, pois os valores podem armazenar tipos de dados mais complexos com operações atômicas definidas sob estes dados.
 
-Redis é um banco de dados em memória mas que também é persistido no disco rígido, uma vez que representa um diferente ***trade-off*** que comabina uma alta velocidade de escrita e leitura através da limitação do conjunto de dados que não podem ser maiores que a memória.
+Redis é um banco de dados em memória mas que também é persistido no disco rígido, uma vez que representa um diferente ***trade-off*** que combina uma alta velocidade de escrita e leitura através da limitação do conjunto de dados que não podem ser maiores que a memória.
 
 Outra vantagem de bancos de dados em memória é que a representação de estruturas de dados mais complexos torna-se mais simples de manipular comparada a mesma estrutura em disco. Assim, REDIS pdoe fazer muito com uma pequena complexidade interna.
 
