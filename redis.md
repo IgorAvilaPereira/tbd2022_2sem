@@ -274,6 +274,78 @@ Renomeia a chave (key), se a nova chave (newkey) não existe.
 **TYPE \<key\>**
 Retorna o tipo do dado armazenado em uma chave (key).
 
+<!--
+Redis Strings Commands
+Following table lists some basic commands to manage strings in Redis.
+
+Sr.No	Command & Description
+1	SET key value
+This command sets the value at the specified key.
+
+2	GET key
+Gets the value of a key.
+-->
+**GETRANGE \<key\> \<start\> \<end\>**
+Retorna uma parte de uma ***string*** armazenada em um chave (key).
+
+<!--
+4	GETSET key value
+Sets the string value of a key and return its old value.
+
+5	GETBIT key offset
+Returns the bit value at the offset in the string value stored at the key.
+
+6	MGET key1 [key2..]
+Gets the values of all the given keys
+
+7	SETBIT key offset value
+Sets or clears the bit at the offset in the string value stored at the key
+-->
+
+**SETEX \<key\> \<seconds\> \<value\>**
+Define no mesmo campo o valor de um chave (key) e seu tempo de expiração.
+
+**SETNX \<key\> \<value\>**
+Define o valor de uma chave (key), somente se esta chave não existe.
+
+**SETRANGE \<key\> \<offset\> \<value\>**
+Sobrescreve parte de uma ***string*** de uma chave (key) começando por uma determinada posição (offset).
+
+**STRLEN \<key\>**
+Retorna o tamanho (quantidade caracteres) do valor armazenado em uma chave (key).
+
+<!--
+12	MSET key value [key value ...]
+Sets multiple keys to multiple values
+-->
+
+**MSETNX \<key\> \<value\> [\<key\> \<value\>...]**
+Define múltiplas chaves para múltiplos valores somente se nenhuma das chaves existe.
+
+<!--
+14	PSETEX key milliseconds value
+Sets the value and expiration in milliseconds of a key
+-->
+
+**INCR \<key\>**
+Incrementa o valor inteiro de uma chave (key)
+
+**INCRBY \<key\> \<increment\>**
+Incrementa o valor inteiro de uma chave com um determinado valor incremental (increment).
+
+<!--
+**INCRBYFLOAT key increment**
+Increments the float value of a key by the given amount
+-->
+
+**DECR \<key\>**
+Decrementa o valor inteiro de uma chave.
+
+**DECRBY \<key\> \<decrement\>**
+Decrementa o valor inteiro de uma chave em um determinado valor de decremento (decrement).
+
+**APPEND \<key\> \<value\>**
+Acrescenta um string em uma chave (key).
 
 ### Listas
 
