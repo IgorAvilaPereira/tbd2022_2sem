@@ -275,7 +275,7 @@ Os Sets no REDIS são coleções de ***strings*** não ordenadas. O comando **SA
 3. 2
 ```
 
-O comando ***sismeber*** testa se um valor pertence ao um determinado conjunto:
+O comando ***sismember*** testa se um valor pertence ao um determinado conjunto:
 
 ```bash
 > sismember myset 3
