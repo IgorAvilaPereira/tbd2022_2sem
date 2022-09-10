@@ -154,11 +154,16 @@ OK
 (integer) 152
 ```
 
-**Salvar várias chaves ao mesmo tempo:**
+**Salvar várias chaves no mesmo comando (MSET):**
 
 ```bash
 > mset a 10 b 20 c 30
 OK
+```
+
+**Retornar várias chaves no mesmo comando (MGET):**
+
+```bash
 > mget a b c
 1) "10"
 2) "20"
