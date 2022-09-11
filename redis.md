@@ -210,7 +210,7 @@ OK
 (integer) 0
 ```
 
-**Obter o tipo de uma chave:**
+**Obter o Tipo:**
 
 ```bash
 > set mykey x
