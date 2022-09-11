@@ -449,7 +449,7 @@ O comando **HSET** cria um hash com múltiplos campos, enquanto o comando **HGET
 6) "1"
 ```
 
- O comando **HINCRBY** permite executar operações em campos individuais:
+ Há comandos que podem ser executados em um campo. Ex: o comando **HINCRBY** permite incrementar o valor de um campo de um hash:
 
 ```bash
  > hincrby user:1000 birthyear 10
