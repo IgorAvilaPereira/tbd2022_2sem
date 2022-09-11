@@ -391,6 +391,10 @@ Acrescenta um string em uma chave (key).
 2) "A"
 3) "B"
 ```
+Note que o comando LRANGE precisa de 2 parâmetros:  LRANGE \<key\> \<start\> \<stop\>
+
+Ambos parâmetros podem ser negativos, falando que o REDIS começa a contar do fim: logo -1 é o último elemento, -2 o penúltimo da lista e assim por diante;
+
 
 Como pode ser visto, RPUSH adiciona elementos à direita da lista, enquanto o comando LPUSH adiciona elementos à esquerda.
 
