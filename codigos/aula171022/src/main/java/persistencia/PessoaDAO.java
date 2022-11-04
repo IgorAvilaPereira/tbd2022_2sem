@@ -58,6 +58,8 @@ public class PessoaDAO {
             MongoDatabase db = mongoClient.getDatabase(this.database);
             MongoCollection<Pessoa> users = db.getCollection(this.collection, Pessoa.class);
             users.insertOne(pessoa);
+            
+//            users.aggregate(Math.)
 
         }
 
