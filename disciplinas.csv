@@ -1,4 +1,4 @@
-SEMESTRE,SIGLA,DISCIPLINA,HORAS
+semestre,sigla,nome,horas
 1,FCP,Fundamentos da Computação,66
 1,LPG,Lógica de Programação,100
 1,IHC,Fundamentos de Interação Humano-Computador,33
