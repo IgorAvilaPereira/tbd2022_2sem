@@ -21,11 +21,16 @@ public class PerfilDAO {
     private Driver driver;
 
     public PerfilDAO() {
-        this.driver = GraphDatabase.driver("bolt://localhost:7687",
+       
+    }
+    
+    public void initDriver(){
+         this.driver = GraphDatabase.driver("bolt://localhost:7687",
                 AuthTokens.basic("neo4j", "password"));
     }
 
     public void criar(Perfil perfil) {
+        initDriver();
         try ( Session session = driver.session()) {
 
             // inserir
@@ -38,7 +43,7 @@ public class PerfilDAO {
     }
 
     public void criarAmizade(Perfil p1, Perfil p2) {
-
+        this.initDriver();
         try ( Session session = driver.session()) {
 
             session.run("MATCH(p1: Perfil) WHERE p1.cpf = $cpf1 "
@@ -52,6 +57,7 @@ public class PerfilDAO {
     }
 
     public void desfazer(Perfil p1, Perfil p2) {
+        this.initDriver();
         try ( Session session = driver.session()) {
             session.run("match (r:Perfil{cpf:$cpf1})-[d:EH_AMIGO]->(x:Perfil{cpf:$cpf2}) DELETE d", parameters("cpf1", p1.getCpf(), "cpf2", p2.getCpf()));
         } finally {

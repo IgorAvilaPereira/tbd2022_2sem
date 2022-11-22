@@ -14,6 +14,11 @@ public class Perfil {
     private String cpf;
 //    private LocalDate 
 
+    public Perfil() {
+    }
+    
+    
+
     public long getId() {
         return id;
     }
