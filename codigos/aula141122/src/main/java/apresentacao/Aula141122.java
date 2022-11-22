@@ -23,7 +23,7 @@ public class Aula141122 {
 
             Perfil p1 = new Perfil("44444444444");
             Perfil p2 = new Perfil("11111111111");
-            perfilDAO.criarAmizade(p1, p2);
+            perfilDAO.desfazer(p1, p2);
 
 
     }
